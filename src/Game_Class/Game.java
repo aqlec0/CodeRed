@@ -19,6 +19,7 @@ public class Game {
             System.out.println("Money = " + inventory.money);
         }
         //TODO 7: Loop the entire reading user input until player gets to 10,000 money */
+        //test
 
         printUserMenu();
 
