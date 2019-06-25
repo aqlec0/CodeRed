@@ -1,5 +1,6 @@
 target/
 .idea/
 *.iml
+*.class
 
 //test gitmerge
