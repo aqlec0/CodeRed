@@ -17,3 +17,4 @@ public class StrawberryField extends FarmingField {
         return baseProfitAfterHarvest*2;
     }
 }
+// test merge
