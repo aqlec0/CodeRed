@@ -7,6 +7,8 @@ public class Inventory {
     int money;
 
     ArrayList<Field> fields = new ArrayList<>();
+    ArrayList<Cow> cows = new ArrayList<>();
+
 
     public Inventory()
     {
@@ -24,6 +26,7 @@ public class Inventory {
         }
         else
         money = money - field.sowingCost;
+        System.out.println(money);
     }
 
     public void buyStrawberryField() {
@@ -31,6 +34,7 @@ public class Inventory {
         StrawberryF strawberryF = new StrawberryF();
         fields.add(strawberryF);
         money = money - strawberryF.sowingCost;
+        System.out.println(money);
     }
 
     public void buyEnhancementFieldGame() {
@@ -38,15 +42,27 @@ public class Inventory {
         EnhancedFieldGame enhancedFieldGame = new EnhancedFieldGame();
         fields.add(enhancedFieldGame);
         money = money - enhancedFieldGame.sowingCost;
+        System.out.println(money);
     }
 
 
     public void NextTurn(){
-        // go through the fields ans calculate profit, add it to money
+        // go through the fields and calculate profit, add it to money
         System.out.println("Next Turn");
         for(Field f: fields){
             money = money + f.calculateProfit();
         }
+        for(Cow c: cows){
+            money = money + c.getMilk();
+        }
+        System.out.println(money);
+    }
+
+    public void buyCow() {
+        System.out.println("Buying Cow");
+        Cow cow = new Cow();
+        cows.add(cow);
+        money = money - 200;
         System.out.println(money);
     }
 

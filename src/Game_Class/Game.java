@@ -34,38 +34,47 @@ public class Game {
                 "3 – Buy Enhanced Field\n" +
                 "4 – Show inventory\n" +
                 "5 – Next turn\n" +
-                "6 – Exit Game (I give up)");
+                "6 – Buy a Cow\n" +
+                "7 – Exit Game (I give up)");
 
-        Scanner numbers = new Scanner(System.in);
-        int number = numbers.nextInt();
 
-        Inventory inventoryMenu = new Inventory();
-        inventoryMenu.buyStrawberryField();
-        inventoryMenu.buyStrawberryField();
+        //inventoryMenu.buyStrawberryField();
+        //inventoryMenu.buyStrawberryField();
+         int temp = 1;
+        do {
+            Scanner numbers = new Scanner(System.in);
+            int number = numbers.nextInt();
 
-        switch (number){
-            case 1:
-                inventoryMenu.buySimplerField();
-                break;
-            case 2:
-                inventoryMenu.buyStrawberryField();
-                break;
-            case 3:
-                inventoryMenu.buyEnhancementFieldGame();
-                break;
-            case 4:
-                inventoryMenu.toString();
-                break;
-            case 5:
-                inventoryMenu.NextTurn();
-                break;
-            case 6:
-                System.out.println("I give up");
-                System.exit(0);
-                break;
+            Inventory inventoryMenu = new Inventory();
+            switch (number) {
+                case 1:
+                    inventoryMenu.buySimplerField();
+                    break;
+                case 2:
+                    inventoryMenu.buyStrawberryField();
+                    break;
+                case 3:
+                    inventoryMenu.buyEnhancementFieldGame();
+                    break;
+                case 4:
+                    inventoryMenu.toString();
+                    break;
+                case 5:
+                    inventoryMenu.NextTurn();
+                    break;
+                case 6:
+                    inventoryMenu.buyCow();
+                    break;
+                case 7:
+                    System.out.println("I give up");
+                    System.exit(0);
+                    break;
 
-            default: System.out.println("Wrong number!");
+                default:
+                    System.out.println("Wrong number!");
+            }
         }
+        while(temp == 1);
 
 
     }
